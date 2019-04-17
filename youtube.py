@@ -30,15 +30,15 @@ def Ayarlar():
 
 def Kayit():
 
-    root.destinationdDIR= filedialog.askdirectory(initialdir="C:\Python")
-    root.hedefYazi.insert('1', root.hedefDosya)
+    root.hedefDIR= filedialog.askdirectory(initialdir="C:\Python")
+    root.hedefYazi.insert('1', root.hedefDIR)
 
 def indir():
  
     getVideo = YouTube(root.linkYaz.get())
     videoStream = getVideo.streams.first()
-    videoStream.indir(root.hedefDosya)
-    messagebox.showinfo("BAŞARILI", "VİDEO İNDİRİLİP KAYDEDİLDİ\n"+root.hedefDosya)
+    videoStream.download(root.hedefDIR)
+    messagebox.showinfo("BAŞARILI", "VİDEO İNDİRİLİP KAYDEDİLDİ\n"+root.hedefDIR)
 
 
 
@@ -50,3 +50,5 @@ Ayarlar()
 
 
 root.mainloop()
+
+    
